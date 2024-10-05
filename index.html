@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peddy Pet</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -54,15 +55,17 @@
     <main>
         <!-- hero section starts-->
          <section>
-            <div class="hero bg-base-200 ">
+            <div class="hero  ">
                 <div class="hero-content text-center">
                   <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Hello there</h1>
+                    <h3>Bringing Families Together <span>agun</span></h3>
+                    <h1 class="text-5xl font-bold">Your Path to Adoption Starts Here</h1>
                     <p class="py-6">
                       Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                       quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary"><a href="#adopt-section">View More</a></button>
+                    <!-- <button id="view-more" onclick="openSection()" class="btn btn-primary">View More</button> -->
                   </div>
                 </div>
             </div>
@@ -72,9 +75,9 @@
          </section>
         <!-- hero section starts-->
          <!-- adopt best section starts -->
-        <section>
+        <section id="adopt-section">
             <!-- first division -->
-            <div class="hero bg-base-200">
+            <div class="hero ">
                 <div class="hero-content text-center">
                   <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Adopt Your Best Friend</h1>
@@ -82,10 +85,10 @@
                       Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                       quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button class="btn btn-primary">Get Started</button>
-                    <button class="btn btn-primary">Get Started</button>
-                    <button class="btn btn-primary">Get Started</button>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button id="dog" class="btn btn-primary">Dogs</button>
+                    <button id="cat" class="btn btn-primary">Cats</button>
+                    <button id="rabbit" class="btn btn-primary">Rabbits</button>
+                    <button id="bird" class="btn btn-primary">Birds</button>
                   </div>
                 </div>
             </div>
@@ -94,26 +97,33 @@
                 <h3 class="font-bold text-xs">Best Deal For You</h3>
                 <button class="btn">Sort by Price</button>
             </div>
-            <div id="card">
-                <div class="card card-compact bg-base-100 w-96 shadow-xl">
-                    <figure>
-                      <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                    </figure>
-                    <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
+        </section>
+        <section id="" class="grid grid-cols-3 p-10 gap-5">
+            <div id="pets" class="grid lg:col-span-2 lg:grid-cols-3 border-2 rounded-lg">
+                
+            </div>
+            <div id="liked-images" class="border-2 rounded-lg">
+                
             </div>
         </section>
     </main>
+    <!-- modal -->
+     <!-- Open the modal using ID.showModal() method -->
+    <button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
+    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+        <div id="modal-container">
+        </div>
+        <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn text-center">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
-    <footer class="footer bg-base-300 text-base-content p-10">
+    <footer class="footer bg-black text-base-content p-10">
         <nav>
             <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
               <p>Location: av. Washington 165, NY CA 54003 <br>
@@ -121,10 +131,10 @@
                 Email: info@yourdomain.com <br>
                 Openings hours: 9.00 AM - 5.00 PM </p>
             <div class="grid grid-flow-col gap-4">
-                <img class="w-[50px]" src="assets/instagram.png" alt="">
-                <img class="w-[50px]" src="assets/instagram.png" alt="">
-                <img class="w-[50px]" src="assets/instagram.png" alt="">
-                <img class="w-[50px]" src="assets/instagram.png" alt="">
+                <img class="w-[40px]" src="assets/facebook.png" alt="">
+                <img class="w-[40px]" src="assets/instagram.png" alt="">
+                <img class="w-[40px]" src="assets/twitter.png" alt="">
+                <img class="w-[40px]" src="assets/youtube.png" alt="">
             </div>
           </nav>
         <nav>
