@@ -5,7 +5,13 @@ const loadPets = () => {
     .then((data) => displayPets(data.pets))
     .catch((error) => console.log(error));
 };
-
+//loading pets for sorting
+const loadPetsSorting = () => {
+    fetch("https://openapi.programming-hero.com/api/peddy/pets")
+    .then((res) => res.json())
+    .then((data) => sortByPrice(data.pets))
+    .catch((error) => console.log(error));
+};
 //load category wise
 const loadCategories = (id) => {
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
@@ -28,6 +34,10 @@ const loadImages = (petId) => {
     .then((data) => likeImage(data.petData))
     .catch((error) => console.log(error));
 };
+const sortByPrice = (petId) => {
+    petId.sort((a, b) => a.price - b.price);
+    displayPets(petId);
+}
 //display modal info
 const showModalInfo = (petData) => {
     document.getElementById('modal-container').innerHTML = "";
@@ -86,7 +96,7 @@ document.getElementById('bird').addEventListener('click',function(){
 //display Pets
 const displayPets = (pets) => {
     const petsContainer = document.getElementById('pets');
-    petsContainer.innerHTML = ''
+    petsContainer.innerHTML = "";
     if(pets.length === 0){
         petsContainer.classList.remove("grid");
         petsContainer.innerHTML = `<div class="hero">
@@ -134,6 +144,9 @@ const displayPets = (pets) => {
     })
 }
 loadPets();
+// document.getElementById('sort').addEventListener('click',function(){
+    
+// })
 // function openSection() {
 //      document.getElementById("adopt-section").style.display = 'block';
 // }
