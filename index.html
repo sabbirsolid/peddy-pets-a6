@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy Pet</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                      </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li><a>Home</a></li>
+                      <li><a>Shop</a></li>
+                      <li><a>Contact</a></li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                      <li><a>Shop</a></li>
+                      <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <a class="btn">Button</a>
+                </div>
+              </div>
+        </nav>
+    </header>
+    <!-- main section -->
+    <main>
+        <!-- hero section starts-->
+         <section>
+            <div class="hero bg-base-200 ">
+                <div class="hero-content text-center">
+                  <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Hello there</h1>
+                    <p class="py-6">
+                      Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                      quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    </p>
+                    <button class="btn btn-primary">Get Started</button>
+                  </div>
+                </div>
+            </div>
+            <div>
+                <img class="lg:w-1/2 lg:mx-auto" src="assets/pet.webp" alt="">
+            </div>
+         </section>
+        <!-- hero section starts-->
+         <!-- adopt best section starts -->
+        <section>
+            <!-- first division -->
+            <div class="hero bg-base-200">
+                <div class="hero-content text-center">
+                  <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Adopt Your Best Friend</h1>
+                    <p class="py-6">
+                      Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                      quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    </p>
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary">Get Started</button>
+                  </div>
+                </div>
+            </div>
+            <!-- second division -->
+            <div class="flex justify-between items-center px-5 lg:px-10 py-5">
+                <h3 class="font-bold text-xs">Best Deal For You</h3>
+                <button class="btn">Sort by Price</button>
+            </div>
+            <div id="card">
+                <div class="card card-compact bg-base-100 w-96 shadow-xl">
+                    <figure>
+                      <img
+                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-base-300 text-base-content p-10">
+        <nav>
+            <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
+              <p>Location: av. Washington 165, NY CA 54003 <br>
+                Phone: +31 85 964 47 25 <br>
+                Email: info@yourdomain.com <br>
+                Openings hours: 9.00 AM - 5.00 PM </p>
+            <div class="grid grid-flow-col gap-4">
+                <img class="w-[50px]" src="assets/instagram.png" alt="">
+                <img class="w-[50px]" src="assets/instagram.png" alt="">
+                <img class="w-[50px]" src="assets/instagram.png" alt="">
+                <img class="w-[50px]" src="assets/instagram.png" alt="">
+            </div>
+          </nav>
+        <nav>
+          <h6 class="footer-title">Useful Links</h6>
+          <a class="link link-hover">Home</a>
+          <a class="link link-hover">About Us</a>
+          <a class="link link-hover">Animals</a>
+          <a class="link link-hover">Foundation</a>
+          <a class="link link-hover">Contact</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Drop Your Message</h6>
+          <input type="text" placeholder="Enter your mail">
+          <button class="btn">Subscribe</button>
+        </nav>
+        
+      </footer>
+    <script src="peddy.js"></script>
+</body>
+</html>
