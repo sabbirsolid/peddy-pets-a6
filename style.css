@@ -1,0 +1,14 @@
+.active{
+    background-color: aquamarine;
+    color: white;
+}
+
+
+  /* @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+  }
+
+  .modal {
+      animation: fadeOut 3s forwards;
+  } */

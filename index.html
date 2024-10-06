@@ -85,10 +85,9 @@
                       Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                       quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button id="dog" class="btn btn-primary">Dogs</button>
-                    <button id="cat" class="btn btn-primary">Cats</button>
-                    <button id="rabbit" class="btn btn-primary">Rabbits</button>
-                    <button id="bird" class="btn btn-primary">Birds</button>
+                    <div id="button-container" class="flex justify-evenly ">
+
+                    </div>
                   </div>
                 </div>
             </div>
@@ -107,7 +106,7 @@
             </div>
         </section>
     </main>
-    <!-- modal -->
+    <!-- modal 1 -->
      <!-- Open the modal using ID.showModal() method -->
     <button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
     <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
@@ -120,6 +119,19 @@
         <button class="btn text-center">Close</button>
       </form>
     </div>
+  </div>
+</dialog>
+
+<!-- modal 2 -->
+ <!-- You can open the modal using ID.showModal() method -->
+<button class="btn hidden" onclick="congrats.showModal()">open modal</button>
+<dialog id="congrats" class="modal">
+  <div class="modal-box">
+    <!-- <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form> -->
+    <h3 class="text-lg font-bold">Congrats</h3>
+    <p class="py-4">You Have Adopted</p>
   </div>
 </dialog>
 
