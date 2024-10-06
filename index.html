@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="px-5">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
                   <div class="dropdown">
@@ -30,23 +30,23 @@
                     </div>
                     <ul
                       tabindex="0"
-                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      class="menu  font-bold menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                       <li><a>Home</a></li>
                       <li><a>Shop</a></li>
                       <li><a>Contact</a></li>
                     </ul>
                   </div>
-                  <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
+                  <a class="btn btn-ghost text-xl font-bold"> <img src="./assets/logo.webp" alt="">Peddy</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                  <ul class="menu menu-horizontal px-1">
+                  <ul class="menu menu-horizontal px-1 font-bold">
                     <li><a>Home</a></li>
                       <li><a>Shop</a></li>
                       <li><a>Contact</a></li>
                   </ul>
                 </div>
                 <div class="navbar-end">
-                  <a class="btn">Button</a>
+                  <img class="w-[30px]" src="./assets/user.png" alt="">
                 </div>
               </div>
         </nav>
@@ -58,13 +58,13 @@
             <div class="hero  ">
                 <div class="hero-content text-center">
                   <div class="max-w-md">
-                    <h3>Bringing Families Together <span>agun</span></h3>
+                    <h3 class="text-xl font-bold">Bringing Families Together <span>agun</span></h3>
                     <h1 class="text-5xl font-bold">Your Path to Adoption Starts Here</h1>
                     <p class="py-6">
                       Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                       quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button class="btn btn-primary"><a href="#adopt-section">View More</a></button>
+                    <button class="btn bg-bgPrimary text-white "><a href="#adopt-section">View More</a></button>
                     <!-- <button id="view-more" onclick="openSection()" class="btn btn-primary">View More</button> -->
                   </div>
                 </div>
@@ -93,15 +93,15 @@
             </div>
             <!-- second division -->
             <div class="flex justify-between items-center px-5 lg:px-10 py-5">
-                <h3 class="font-bold text-xs">Best Deal For You</h3>
-                <button id="sort" onclick="loadPetsSorting()" class="btn">Sort by Price</button>
+                <h3 class="font-bold text-xl">Best Deal For You</h3>
+                <button id="sort" onclick="loadPetsSorting()" class="btn bg-bgPrimary text-white">Sort by Price</button>
             </div>
         </section>
-        <section id="" class="grid grid-cols-3 p-10 gap-5">
-            <div id="pets" class="grid lg:col-span-2 lg:grid-cols-3 border-2 rounded-lg">
-              <span class="loading loading-spinner loading-lg"></span>
+        <section id="" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5 mx-auto">
+            <div id="pets" class="lg:grid grid-cols-1 md:grid-cols-2 lg:col-span-2 lg:grid-cols-3 lg:border-2 rounded-lg">
+              
             </div>
-            <div id="liked-images" class="border-2 rounded-lg">
+            <div id="liked-images" class="grid grid-cols-2 border-2 rounded-lg">
                 
             </div>
         </section>
@@ -135,7 +135,7 @@
   </div>
 </dialog>
 
-    <footer class="footer bg-black text-base-content p-10">
+    <footer class="footer bg-black text-white lg:flex justify-evenly p-10">
         <nav>
             <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
               <p>Location: av. Washington 165, NY CA 54003 <br>
@@ -159,11 +159,22 @@
         </nav>
         <nav>
           <h6 class="footer-title">Drop Your Message</h6>
-          <input type="text" placeholder="Enter your mail">
-          <button class="btn">Subscribe</button>
+          <input class="w-full pr-10 py-3 rounded-lg" type="text" placeholder="  Enter your mail">
+          <button class="btn w-full bg-bgPrimary">Subscribe</button>
         </nav>
         
       </footer>
     <script src="peddy.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bgPrimary: '#0E7A81',
+            }
+          }
+        }
+      }
+    </script>
 </body>
 </html>

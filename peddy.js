@@ -26,7 +26,7 @@ const loadCategories = (id) => {
     .then((res) => res.json())
     .then((data) => {
         removeActive();
-        document.getElementById(id).classList.add('active');
+        document.getElementById(id).classList.add('bg-bgPrimary');
         displayPets(data.data)
     })
     .catch((error) => console.log(error));
@@ -34,7 +34,8 @@ const loadCategories = (id) => {
 function removeActive(){
     const buttons = document.getElementsByClassName('container-btn');
     for(let btn of buttons){
-        btn.classList.remove('active');
+        btn.classList.remove('bg-bgPrimary');
+        
     }
 }
 
@@ -56,7 +57,7 @@ const loadImages = (petId) => {
 
 //sorting porting
 const sortByPrice = (petId) => {
-    petId.sort((a, b) => a.price - b.price);
+    petId.sort((a, b) =>  b.price - a.price);
     displayPets(petId);
 }
 
@@ -76,28 +77,22 @@ const showModalInfo = (petData) => {
                     </figure>
                     <div class="">
                       <h2 class="card-title">${petData.pet_name}</h2>
-                      <p>Breed: ${petData.breed}</p>
-                      <p>Birth: ${petData.date_of_birth}</p>
-                      <p>Gender: ${petData.gender}</p>
-                      <p>Price: ${petData.price}</p>
+                      <p>Breed: ${petData.breed === undefined || petData.breed === null? 'Not Available':petData.breed}</p>
+                      <p>Birth: ${petData.date_of_birth === undefined||petData.date_of_birth===null? "Not Available": petData.date_of_birth}</p>
+                      <p>Gender: ${petData.gender === undefined||petData.gender===null?'Not Available':petData.gender}</p>
+                      <p>Price: ${petData.price===undefined||petData.price ===null?'Not Available':petData.price}</p>
                     </div>
                     <div class="">
                       <h2 class="text-xl font-bold">Details Information</h2>
-                      <p>${petData.pet_details}</p>
+                      <p>${petData.pet_details===undefined || petData.pet_details===null?'Not Available':petData.pet_details}</p>
                     </div>
                   </div>
         `;
         document.getElementById('modal-container').append(card);
-    // console.log(petData);
-    // document.getElementById('modal-container').innerHTML = `
-    // <img src= ${petData.image} alt="Pets" />`;
     document.getElementById('showModalData').click();
 }
 //like images
 const likeImage = (petData) => {
-    // document.getElementById('liked-images').innerHTML = `<div>
-    // <img class="h-[200px] w-[300px] p-3" src= ${petData.image} alt="Pets" />
-    // </div>`;
     const imageContainer = document.getElementById('liked-images');
     const card = document.createElement('div');
     card.classList = 'card card-compact p-2';
@@ -113,17 +108,12 @@ const displayButtonsOnCategory = (categories) =>{
     for( item of categories){
     const categoryContainer = document.getElementById('button-container');
     const btn = document.createElement('button');
-    btn.classList = 'btn'
-    btn.innerHTML = `<button onclick="loadCategories('${item.category}')" id="${item.category}" class="flex justify-between items-center font-bold gap-2 container-btn"><img class="w-[20px]" src="${item.category_icon}"/> ${item.category}</button>`;
+    btn.classList = 'bg-slate-300 rounded-full'
+    btn.innerHTML = `<button onclick="loadCategories('${item.category}')" id="${item.category}" class="flex justify-between rounded-full  px-4 py-3 items-center font-bold gap-2 container-btn"><img class="w-[20px]" src="${item.category_icon}"/> ${item.category}</button>`;
     categoryContainer.append(btn);
     }
 }
 
-// {
-//     "id": 1,
-//     "category": "Cat",
-//     "category_icon": "https://i.ibb.co.com/N7dM2K1/cat.png"
-// }
 //display Pets
 const displayPets = (pets) => {
     const petsContainer = document.getElementById('pets');
@@ -146,7 +136,6 @@ const displayPets = (pets) => {
         petsContainer.classList.add('grid');
     }
     pets.forEach((pet) => {
-    //console.log(pet);
         const card = document.createElement('div');
         card.classList = 'card card-compact py-5';
         card.innerHTML = `
@@ -158,10 +147,10 @@ const displayPets = (pets) => {
                     </figure>
                     <div class="">
                       <h2 class="card-title">${pet.pet_name}</h2>
-                      <p>Breed: ${pet.breed}</p>
-                      <p>Birth: ${pet.date_of_birth}</p>
-                      <p>Gender: ${pet.gender}</p>
-                      <p>Price: ${pet.price}</p>
+                      <p>Breed: ${pet.breed ===undefined|| pet.breed === null ? 'Not Available':pet.breed}</p>
+                      <p>Birth: ${pet.date_of_birth=== undefined|| pet.date_of_birth === null ?'Not Available':pet.date_of_birth}</p>
+                      <p>Gender: ${pet.gender === undefined|| pet.gender === null ? 'Not Available':pet.gender}</p>
+                      <p>Price: ${pet.price=== undefined|| pet.price === null ? 'Not Available': pet.price}</p>
                       <div class="card-actions justify-center py-3">
                         <button onclick="loadImages(${pet.petId})" class="btn btn-primary">Like</button>
                         <button onclick="modal()"class="btn btn-primary">Adopt</button>
@@ -187,13 +176,3 @@ const modal = () => {
         congrats.close(); 
     }, 3000);
 };
-
-function sabbir(){
-    window.addEventListener("load", () => {
-        const loader = document.querySelector(".loader");
-        loader.classList.add("loader-hidden");
-        loader.addEventListener("transitionend", () => {
-            document.body.removeChild("loader");
-        })
-    })
-}
