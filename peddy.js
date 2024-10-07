@@ -16,7 +16,6 @@ const loadPetsSorting = () => {
 const loadMainCategory = () => {
     fetch("https://openapi.programming-hero.com/api/peddy/categories")
     .then((res) => res.json())
-    // .then((data) => console.log(data.categories))
     .then((data) => displayButtonsOnCategory(data.categories))
     .catch((error) => console.log(error));
 };
@@ -27,8 +26,9 @@ const loadCategories = (id) => {
     .then((data) => {
         removeActive();
         document.getElementById(id).classList.add('bg-bgSecondary');
+        document.getElementById('pets').classList.remove('grid');
         document.getElementById('pets').innerHTML = "";
-        document.getElementById('pets').innerHTML = `<div id="loading" class="flex flex-col             justify-center items-center h-screen">
+        document.getElementById('pets').innerHTML = `<div id="loading" class="flex         justify-center items-center py-20">
                   <span class="loading loading-spinner loading-lg"></span>
                 </div>`;
         setTimeout(() => {
@@ -44,7 +44,6 @@ function removeActive(){
         btn.classList.remove('bg-bgSecondary');
     }
 }
-
 //loading modal info
 const loadModalInfo = (petId) => {
     fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`)
@@ -120,15 +119,14 @@ const displayButtonsOnCategory = (categories) =>{
     const categoryContainer = document.getElementById('button-container');
     const btn = document.createElement('button');
     btn.classList = ''
-    btn.innerHTML = `<button onclick="loadCategories('${item.category}')" id="${item.category}" class="container-btn  flex gap-2 rounded-lg p-3 items-center justify-center font-bold"><img class="w-[15px]" src="${item.category_icon}"/> ${item.category}</button>`;
-    // btn.classList = 'btn rounded-xl border-2'
-    // btn.innerHTML = `<button onclick="loadCategories('${item.category}')" id="${item.category}" class="flex justify-between rounded-xl  px-5 py-3 items-center font-bold gap-2 container-btn"><img class="w-[20px]" src="${item.category_icon}"/> ${item.category}</button>`;
+    btn.innerHTML = `<button onclick="loadCategories('${item.category}')" id="${item.category}" class="container-btn bg-slate-100 flex gap-2 rounded-lg p-3 items-center justify-center font-bold"><img class="w-[15px]" src="${item.category_icon}"/> ${item.category}</button>`;
     categoryContainer.append(btn);
     }
 }
 
 //display Pets
 const displayPets = (pets) => {
+    document.getElementById('pets').classList.add('grid');
     const petsContainer = document.getElementById('pets');
     petsContainer.innerHTML = "";
     if(pets.length === 0){
@@ -136,7 +134,7 @@ const displayPets = (pets) => {
         petsContainer.innerHTML = `<div class="hero">
         <div class="hero-content text-center">
                 <div class="flex flex-col justify-center items-center space-y-5">
-                <img src="/assets/error.webp" alt="">
+                <img src="./assets/error.webp" alt="">
                 <h1 class="text-4xl font-bold">No Information Available</h1>
                 <p class="">This subject-related information is not available.</p>
                 </div>
@@ -185,8 +183,9 @@ loadMainCategory();
 
 //sorting
 document.getElementById('sort').addEventListener('click', function () {
+    document.getElementById('pets').classList.remove('grid');
     document.getElementById('pets').innerHTML = "";
-    document.getElementById('pets').innerHTML = `<div id="loading" class="flex flex-col justify-center items-center min-h-screen">
+    document.getElementById('pets').innerHTML = `<div id="loading" class="flex flex-col justify-center items-center py-20">
               <span class="loading loading-spinner loading-lg"></span>
             </div>`;
 
@@ -212,4 +211,3 @@ const modal = () => {
       }
     }, 1000);
   };
-
