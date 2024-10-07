@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-
 <body>
   <header>
     <!-- navbar section -->
@@ -84,19 +82,13 @@
           </div>
         </div>
       </div>
-
-      <!-- <div id="button-container" class="lg:flex justify-evenly lg:flex-col">
-                      
-            </div> -->
       <div id="button-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 w-1/2 mx-auto gap-5">
-
       </div>
 
-      <!-- second division -->
+      <!-- sorting division -->
       <div class="flex justify-between items-center px-2 lg:px-10 py-5">
         <h3 class="font-bold text-lg">Best Deals For You</h3>
         <button id="sort" class=" btn bg-bgPrimary text-white">Sort by Price</button>
-        <!-- <button id="sort" onclick="loadPetsSorting()" class="btn bg-bgPrimary text-white">Sort by Price</button> -->
       </div>
     </section>
     
@@ -112,8 +104,8 @@
     </section>
     <!-- images and card section ends-->
   </main>
+  
   <!-- modal 1 -->
-  <!-- Open the modal using ID.showModal() method -->
   <button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
   <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
@@ -126,7 +118,8 @@
       </div>
     </div>
   </dialog>
- <!-- congrats modal  -->
+ 
+  <!-- congrats modal  -->
   <section>
     <dialog id="congrats" class="modal">
       <form method="dialog" class="modal-box flex flex-col justify-center items-center text-center space-y-5">
@@ -137,7 +130,6 @@
         </div>
       </form>
     </dialog>
-      
   </section>
 
   <!-- footer section -->
@@ -168,7 +160,6 @@
       <input class="w-full pr-10 py-3 rounded-lg" type="text" placeholder="  Enter your mail">
       <button class="btn w-full bg-bgPrimary">Subscribe</button>
     </nav>
-
   </footer>
   <!-- script files -->
   <script src="peddy.js"></script>
@@ -186,5 +177,4 @@
     }
   </script>
 </body>
-
 </html>
