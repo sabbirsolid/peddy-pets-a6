@@ -2,7 +2,16 @@
 const loadPets = () => {
     fetch("https://openapi.programming-hero.com/api/peddy/pets")
     .then((res) => res.json())
-    .then((data) => displayPets(data.pets))
+    .then((data) => {
+        document.getElementById('pets').classList.remove('grid');
+        document.getElementById('pets').innerHTML = "";
+        document.getElementById('pets').innerHTML = `<div id="loading" class="flex         justify-center items-center py-20">
+                  <span class="loading loading-spinner loading-lg"></span>
+                </div>`;
+        setTimeout(() => {
+            displayPets(data.pets);
+        }, 2000); 
+    })
     .catch((error) => console.log(error));
 };
 //loading pets for sorting
