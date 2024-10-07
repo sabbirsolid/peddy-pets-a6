@@ -20,22 +20,28 @@ const loadMainCategory = () => {
     .then((data) => displayButtonsOnCategory(data.categories))
     .catch((error) => console.log(error));
 };
-//load category wise
+//loading buttons category wise
 const loadCategories = (id) => {
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
     .then((res) => res.json())
     .then((data) => {
         removeActive();
         document.getElementById(id).classList.add('bg-bgPrimary');
-        displayPets(data.data)
+        document.getElementById('pets').innerHTML = "";
+        document.getElementById('pets').innerHTML = `<div id="loading" class="flex flex-col             justify-center items-center h-screen">
+                  <span class="loading loading-bars loading-lg"></span>
+                </div>`;
+        setTimeout(() => {
+            displayPets(data.data);
+        }, 2000); 
     })
     .catch((error) => console.log(error));
 };
+//remove active buttons
 function removeActive(){
     const buttons = document.getElementsByClassName('container-btn');
     for(let btn of buttons){
         btn.classList.remove('bg-bgPrimary');
-        
     }
 }
 
@@ -53,17 +59,12 @@ const loadImages = (petId) => {
     .then((data) => likeImage(data.petData))
     .catch((error) => console.log(error));
 };
-
-
 //sorting porting
 const sortByPrice = (petId) => {
     petId.sort((a, b) =>  b.price - a.price);
     displayPets(petId);
 }
-
-
-
-//display modal info
+//pushing modal info
 const showModalInfo = (petData) => {
     document.getElementById('modal-container').innerHTML = "";
     const card = document.createElement('div');
@@ -100,7 +101,6 @@ const likeImage = (petData) => {
     imageContainer.appendChild(card)
 
 }
-
 
 //displaying main categories
 const displayButtonsOnCategory = (categories) =>{
@@ -139,22 +139,27 @@ const displayPets = (pets) => {
         const card = document.createElement('div');
         card.classList = 'card card-compact py-5';
         card.innerHTML = `
-        <div class="card card-compact bg-base-100 w-96 shadow-xl px-10 py-5">
-                    <figure class ="h-[200px] w-[300px] relative">
+        <div class="card card-compact bg-base-100 w-3/4 mx-auto shadow-xl px-10 py-5">
+                    <figure class ="w-full" relative">
                       <img
                         src= ${pet.image}
                         alt="Pets" />
                     </figure>
                     <div class="">
                       <h2 class="card-title">${pet.pet_name}</h2>
-                      <p>Breed: ${pet.breed ===undefined|| pet.breed === null ? 'Not Available':pet.breed}</p>
-                      <p>Birth: ${pet.date_of_birth=== undefined|| pet.date_of_birth === null ?'Not Available':pet.date_of_birth}</p>
-                      <p>Gender: ${pet.gender === undefined|| pet.gender === null ? 'Not Available':pet.gender}</p>
-                      <p>Price: ${pet.price=== undefined|| pet.price === null ? 'Not Available': pet.price}</p>
+                      
+                      <div class="flex"><img src="./assets/breed.png" alt=""><p> Breed: ${pet.breed ===undefined|| pet.breed === null ? 'Not Available':pet.breed}</p> </div>
+                      
+                      <div class="flex"><img src="./assets/birth.png" alt=""><p> Birth: ${pet.date_of_birth=== undefined|| pet.date_of_birth === null ?'Not Available':pet.date_of_birth}</p> </div>
+                      
+                      <div class="flex"><img src="./assets/gender.png" alt=""><p> Gender: ${pet.gender === undefined|| pet.gender === null ? 'Not Available':pet.gender}</p> </div>
+                      
+                      <div class="flex"><img src="./assets/price.png" alt=""><p> Price: ${pet.price=== undefined|| pet.price === null ? 'Not Available': pet.price}</p> </div>
+                      
                       <div class="card-actions justify-center py-3">
-                        <button onclick="loadImages(${pet.petId})" class="btn btn-primary">Like</button>
-                        <button onclick="modal()"class="btn btn-primary">Adopt</button>
-                        <button onclick="loadModalInfo(${pet.petId})" class="btn btn-primary">Details</button>
+                        <button onclick="loadImages(${pet.petId})" class="btn bg-bgPrimary text-white">Like</button>
+                        <button onclick="modal()"class="btn bg-bgPrimary text-white">Adopt</button>
+                        <button onclick="loadModalInfo(${pet.petId})" class="btn bg-bgPrimary text-white">Details</button>
                       </div>
                     </div>
                   </div>
@@ -163,10 +168,11 @@ const displayPets = (pets) => {
         
     })
 }
+//calling functions
 loadPets();
 loadMainCategory();
 
-
+//congrats modal
 const modal = () => {
     const congrats = document.getElementById('congrats');
     congrats.style.visibility = 'visible';
@@ -176,3 +182,14 @@ const modal = () => {
         congrats.close(); 
     }, 3000);
 };
+document.getElementById('sort').addEventListener('click', function () {
+    document.getElementById('pets').innerHTML = "";
+    document.getElementById('pets').innerHTML = `<div id="loading" class="flex flex-col justify-center items-center min-h-screen">
+              <span class="loading loading-bars loading-lg"></span>
+            </div>`;
+
+    setTimeout(() => {
+        loadPetsSorting();
+    }, 3000); 
+}); 
+
