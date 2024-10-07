@@ -1,108 +1,109 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peddy Pet</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
-    <header>
-      <!-- navbar section -->
-        <nav class="px-5">
-            <div class="navbar bg-base-100">
-                <div class="navbar-start">
-                  <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4 6h16M4 12h8m-8 6h16" />
-                      </svg>
-                    </div>
-                    <ul
-                      tabindex="0"
-                      class="menu  font-bold menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                      <li><a>Home</a></li>
-                      <li><a>Shop</a></li>
-                      <li><a>Contact</a></li>
-                    </ul>
-                  </div>
-                  <a class="btn btn-ghost text-xl font-bold"> <img src="./assets/logo.webp" alt="">Peddy</a>
-                </div>
-                <div class="navbar-center hidden lg:flex">
-                  <ul class="menu menu-horizontal px-1 font-bold">
-                    <li><a>Home</a></li>
-                      <li><a>Shop</a></li>
-                      <li><a>Contact</a></li>
-                  </ul>
-                </div>
-                <div class="navbar-end">
-                  <img class="w-[30px]" src="./assets/user.png" alt="">
-                </div>
-              </div>
-        </nav>
-    </header>
-    <!-- main section -->
-    <main>
-        <!-- hero section starts-->
-         <section>
-            <div class="hero  ">
-                <div class="hero-content text-center">
-                  <div class="max-w-md">
-                    <h3 class="text-xl font-bold">Bringing Families Together <span>agun</span></h3>
-                    <h1 class="text-5xl font-bold">Your Path to Adoption Starts Here</h1>
-                    <p class="py-6">
-                      Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                      quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
-                    <button class="btn bg-bgPrimary text-white "><a href="#adopt-section">View More</a></button>
-                    <!-- <button id="view-more" onclick="openSection()" class="btn btn-primary">View More</button> -->
-                  </div>
-                </div>
-            </div>
-            <div>
-                <img class="lg:w-1/2 lg:mx-auto" src="assets/pet.webp" alt="">
-            </div>
-         </section>
-        <!-- hero section starts-->
-         <!-- adopt best section starts -->
-        <section id="adopt-section">
-            <!-- first division -->
-            <div class="hero ">
-                <div class="hero-content text-center">
-                  <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Adopt Your Best Friend</h1>
-                    <p class="py-6">
-                      Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                      quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
-                    <div id="button-container" class="flex justify-evenly ">
-                      
-                    </div>
-                  </div>
-                </div>
-            </div>
-            
-            <!-- second division -->
-            <div class="flex justify-between items-center px-5 lg:px-10 py-5">
-                <h3 class="font-bold text-xl">Best Deal For You</h3>
-                <button id="sort" class="btn bg-bgPrimary text-white">Sort by Price</button>
-                <!-- <button id="sort" onclick="loadPetsSorting()" class="btn bg-bgPrimary text-white">Sort by Price</button> -->
-            </div>
-        </section>
 
-<!-- images and card section -->
-        <!-- <section id="" class="lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:p-5 gap-5 mx-auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peddy Pet</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+  <header>
+    <!-- navbar section -->
+    <nav class="px-5">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0"
+              class="menu  font-bold menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-xl font-bold"> <img src="./assets/logo.webp" alt="">Peddy</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 font-bold">
+            <li><a>Home</a></li>
+            <li><a>Shop</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <button class="btn rounded-full"><img class="w-[30px]" src="./assets/user.png" alt=""></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- main section -->
+  <main>
+    <!-- hero section starts-->
+    <section>
+      <div class="hero  ">
+        <div class="hero-content text-center">
+          <div class="max-w-md ">
+            <h3 class="text-lg text-center font-bold">Bringing Families Together<img class="w-[25px] h-[25px]"
+                style="display: inline;" src="./assets/flame.png" alt=""></h3>
+            <div>
+              <h1 class="text-5xl font-bold">Your Path to Adoption Starts Here</h1>
+              <p class="py-6">
+                This website offers a variety of resources for pet owners, including expert advice on pet care, product
+                recommendations, grooming tips, and adoption options. It creates a supportive community for animal
+                lovers.
+              </p>
+              <button class="btn bg-bgPrimary text-white "><a href="#adopt-section">View More</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img class="lg:w-1/2 lg:mx-auto" src="./assets/pet.webp" alt="">
+      </div>
+    </section>
+    <!-- hero section starts-->
+    <!-- adopt best section starts -->
+    <section id="adopt-section">
+      <!-- first division -->
+      <div class="hero ">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Adopt Your Best Friend</h1>
+            <p class="py-6">
+              Pets bring joy, companionship, and emotional support. They enrich our lives, reduce stress, and create
+              lasting bonds with families.
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- <div id="button-container" class="lg:flex justify-evenly lg:flex-col">
+                      
+            </div> -->
+      <div id="button-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 w-1/2 mx-auto gap-5">
+
+      </div>
+
+      <!-- second division -->
+      <div class="flex justify-between items-center px-5 lg:px-10 py-5">
+        <h3 class="font-bold text-xl">Best Deal For You</h3>
+        <button id="sort" class="btn bg-bgPrimary text-white">Sort by Price</button>
+        <!-- <button id="sort" onclick="loadPetsSorting()" class="btn bg-bgPrimary text-white">Sort by Price</button> -->
+      </div>
+    </section>
+
+    <!-- images and card section -->
+    <!-- <section id="" class="lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:p-5 gap-5 mx-auto">
             <div id="pets" class="lg:grid grid-cols-1 md:grid-cols-2 lg:col-span-2 lg:grid-cols-3 lg:border-2 rounded-lg">
              
               
@@ -111,89 +112,103 @@
                 
             </div>
         </section> -->
-<!-- images and card section ends-->
-<!-- images and card section -->
-        <section id="" class="lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:p-5 gap-5 mx-auto">
-            <div id="pets" class="lg:grid grid-cols-1 md:grid-cols-2 lg:col-span-2 lg:grid-cols-3 lg:border-2 rounded-lg">
-              
-            </div>
-            <div id="liked-images" class="grid lg:grid-cols-2 border-2 rounded-lg auto-rows-min">
-                
-            </div>
-        </section>
-<!-- images and card section ends-->
-    </main>
-    <!-- modal 1 -->
-     <!-- Open the modal using ID.showModal() method -->
-    <button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
-    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-        <div id="modal-container">
-        </div>
-        <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn text-center">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+    <!-- images and card section ends-->
+    <!-- images and card section -->
+    <section id="" class="lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:p-5 gap-5 mx-auto">
+      <div id="pets" class="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 lg:grid-cols-3 lg:border-2 rounded-lg auto-rows-min">
 
-<!-- modal 2 -->
-<!-- congrats modal  -->
-<button class="btn hidden" onclick="congrats.showModal()">open modal</button>
+      </div>
+      <div id="liked-images"
+        class="grid md:grid-cols-2 lg:grid-cols-2 border border-stone-200 rounded-xl auto-rows-min">
+
+      </div>
+    </section>
+    <!-- images and card section ends-->
+  </main>
+  <!-- modal 1 -->
+  <!-- Open the modal using ID.showModal() method -->
+  <button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
+  <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <div id="modal-container">
+      </div>
+      <div class="py-3">
+        <form method="dialog">
+          <button class="btn btn-sm w-full bg-bgThird">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- modal 2 -->
+  <!-- congrats modal  -->
+  <!-- <button class="btn hidden" onclick="congrats.showModal()">open modal</button>
 <dialog id="congrats" class="modal">
   <div class="modal-box">
-    <!-- <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-    </form> -->
     <h3 class="text-lg font-bold">Congrats</h3>
     <p class="py-4">You Have Adopted</p>
   </div>
-</dialog>
+</dialog> -->
 
-<!-- footer section -->
-    <footer class="footer bg-black text-white lg:flex justify-evenly p-10">
-        <nav>
-            <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
-              <p>Location: av. Washington 165, NY CA 54003 <br>
-                Phone: +31 85 964 47 25 <br>
-                Email: info@yourdomain.com <br>
-                Openings hours: 9.00 AM - 5.00 PM </p>
-            <div class="grid grid-flow-col gap-4">
-                <img class="w-[40px]" src="assets/facebook.png" alt="">
-                <img class="w-[40px]" src="assets/instagram.png" alt="">
-                <img class="w-[40px]" src="assets/twitter.png" alt="">
-                <img class="w-[40px]" src="assets/youtube.png" alt="">
-            </div>
-          </nav>
-        <nav>
-          <h6 class="footer-title">Useful Links</h6>
-          <a class="link link-hover">Home</a>
-          <a class="link link-hover">About Us</a>
-          <a class="link link-hover">Animals</a>
-          <a class="link link-hover">Foundation</a>
-          <a class="link link-hover">Contact</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Drop Your Message</h6>
-          <input class="w-full pr-10 py-3 rounded-lg" type="text" placeholder="  Enter your mail">
-          <button class="btn w-full bg-bgPrimary">Subscribe</button>
-        </nav>
-        
-      </footer>
-<!-- script files -->
-    <script src="peddy.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              bgPrimary: '#0E7A81',
-            }
+  <section>
+    <dialog id="congrats" class="modal">
+      <form method="dialog" class="modal-box flex flex-col justify-center items-center text-center space-y-5">
+        <div id="modal-container">
+          <h3 class="text-3xl font-bold">Congratulations</h3>
+          <p class="py-4">You Have Adopted</p>
+          <!-- Countdown display without dynamic CSS -->
+          <span class="countdown font-mono text-4xl" id="countdown"></span>
+        </div>
+      </form>
+    </dialog>
+      
+  </section>
+
+  <!-- footer section -->
+  <footer class="footer bg-black text-white lg:flex justify-evenly p-10">
+    <nav>
+      <a class="btn btn-ghost text-xl"> <img src="assets/logo.webp" alt="">Peddy</a>
+      <p>Location: av. Washington 165, NY CA 54003 <br>
+        Phone: +31 85 964 47 25 <br>
+        Email: info@yourdomain.com <br>
+        Openings hours: 9.00 AM - 5.00 PM </p>
+      <div class="grid grid-flow-col gap-4">
+        <img class="w-[40px]" src="assets/facebook.png" alt="">
+        <img class="w-[40px]" src="assets/instagram.png" alt="">
+        <img class="w-[40px]" src="assets/twitter.png" alt="">
+        <img class="w-[40px]" src="assets/youtube.png" alt="">
+      </div>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Useful Links</h6>
+      <a class="link link-hover">Home</a>
+      <a class="link link-hover">About Us</a>
+      <a class="link link-hover">Animals</a>
+      <a class="link link-hover">Foundation</a>
+      <a class="link link-hover">Contact</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Drop Your Message</h6>
+      <input class="w-full pr-10 py-3 rounded-lg" type="text" placeholder="  Enter your mail">
+      <button class="btn w-full bg-bgPrimary">Subscribe</button>
+    </nav>
+
+  </footer>
+  <!-- script files -->
+  <script src="peddy.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgPrimary: '#0E7A81',
+            bgSecondary: 'rgba(14, 122, 129, 0.30)',
+            bgThird: 'rgba(14, 122, 129, 0.40)',
           }
         }
       }
-    </script>
+    }
+  </script>
 </body>
+
 </html>
