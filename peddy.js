@@ -116,7 +116,7 @@ const likeImage = (petData) => {
     const imageContainer = document.getElementById('liked-images');
     const card = document.createElement('div');
     card.classList = 'card card-compact p-2';
-    card.innerHTML = `<div class="p-4"> <img class=" mx-auto w-[300px] h-[200px] rounded-2xl" src= ${petData.image} alt="Pets" /> </div>`;
+    card.innerHTML = `<div class="p-4"> <img class=" mx-auto rounded-2xl" src= ${petData.image} alt="Pets" /> </div>`;
     imageContainer.appendChild(card)
 
 }
@@ -219,4 +219,3 @@ const modal = () => {
       }
     }, 1000);
   };
-
