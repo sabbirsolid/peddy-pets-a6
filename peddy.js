@@ -176,14 +176,13 @@ const displayPets = (pets) => {
                       
                       <div class="card-actions justify-center py-3">
                         <button onclick="loadImages(${pet.petId})" class="btn btn-sm bg-bgPrimary text-white">Like</button>
-                        <button onclick="modal()"class="btn btn-sm  bg-bgPrimary text-white">Adopt</button>
+                        <button onclick="modal(); this.disabled = true;" class="btn btn-sm bg-bgPrimary text-white">Adopt</button>
                         <button onclick="loadModalInfo(${pet.petId})" class="btn btn-sm bg-bgPrimary  text-white">Details</button>
                       </div>
                     </div>
                   </div>
         `
         petsContainer.append(card);        
-        
     })
 }
 //calling functions
@@ -220,3 +219,4 @@ const modal = () => {
       }
     }, 1000);
   };
+
