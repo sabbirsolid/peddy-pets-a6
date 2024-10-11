@@ -98,6 +98,10 @@ const showModalInfo = (petData) => {
                       <p>Gender: ${petData.gender === undefined||petData.gender===null?'Not Available':petData.gender}</p>
                       </div>
                       <div class="flex items-center gap-1">
+                      <img src="./assets/gender.png" alt="">
+                      <p>Vaccinated Status: ${petData.vaccinated_status === undefined||petData.vaccinated_status===null?'Not Available':petData.vaccinated_status}</p>
+                      </div>
+                      <div class="flex items-center gap-1">
                       <img src="./assets/price.png" alt="">
                       <p>Price: ${petData.price===undefined||petData.price ===null?'Not Available':petData.price}</p>
                       </div> 
